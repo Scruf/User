@@ -10,19 +10,19 @@ package com.egor.user;
  * @author egor
  */
 import java.util.UUID;
-public class User {
+public class UserAccount {
     private UUID userAccountId;
     private String username;
     private String password;
     private String email;
-    User()
+  private  UserAccount()
     {
         this.userAccountId=UUID.randomUUID();
         this.username=" ";
         this.password=" ";
         this.email=" ";
     }
-    User(String usr,String pass,String em)
+ private   UserAccount(String usr,String pass,String em)
     {
         this.userAccountId=UUID.randomUUID();
         setUsername(usr);
@@ -59,15 +59,15 @@ public class User {
     {
         this.email=m_Email;
     }
-    public static User getInstance()
+    public static UserAccount getInstance()
     {
        
-       User usr =  new User();
+       UserAccount usr =  new UserAccount();
        return usr;
     }
-    public static User getInstance(String U,String P,String E)
+    public static UserAccount getInstance(String U,String P,String E)
     {
-        User usr = new User(U,P,E);
+        UserAccount usr = new UserAccount(U,P,E);
         return usr;
     }
     public boolean authenticate(String U,String P)
